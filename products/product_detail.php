@@ -62,10 +62,16 @@ foreach($favs as $key => $fav){
 
 <!DOCTYPE html>
 <html>
+<head>
+        <meta charset="utf-8">
+        <title>Product Detail</title>
+        <link rel="stylesheet" href="../css/styles.css">
+</head>
 <body>
+	<div id="container">
 	<h1><?=$product['name']?>の商品詳細画面です</h1>
 	<p>商品名<br><?= $product['name']?></p>
-	<p>画像<br><img src="<?= $product['image'] ?>" width="300px" height="200px"></p>
+	<p><br><img src="<?= $product['image'] ?>" width="300px" height="250px"></p>
 	<p>紹介文<br><?= $product['introduction']?></p>
 	<p>値段<br><?= $product['price']?>円</p>
 	<?php if(empty($count)){ ?>
@@ -75,13 +81,13 @@ foreach($favs as $key => $fav){
 	<?php } ?>
 	<?php if(isset($_SESSION['login_id'])){ ?>
 		<?php if($fav_exists_check){ ?>
-			<form action="" method="post">
-				<input type="submit" name="dis_fav" value="「いいね」を取り消す">
-			</form>
+			<div class="btn_div"><form action="" method="post">
+				<input type="submit" name="dis_fav" value="「いいね」を取り消す" class="btn">
+			</form></div>
 		<?php }else{ ?>
-			<form action="" method="post">
-				<input type="submit" name="fav" value="この商品に「いいね」する">
-			</form>
+			<div class="btn_div"><form action="" method="post">
+				<input type="submit" name="fav" value="この商品に「いいね」する" class="btn">
+			</form></div>
 		<?php } ?>
 	<?php } ?>
 	<?php if(empty($comments)){ ?>
@@ -89,14 +95,14 @@ foreach($favs as $key => $fav){
 	<?php }else{ ?>
 		<p>口コミ一覧</p>
 		<table border='1'>
-		<tr><td>ニックネーム</td><td>コメント</td><td>削除</td></tr>
+		<tr><td class="column">ニックネーム</td><td class="column">コメント</td><td class="column">　　</td></tr>
 		<?php foreach($comments as $key => $value){ ?>
 			<tr>
-				<td><?=escape($value['nickname'])?></td>
-				<td><?=escape($value['comment'])?></td>
-				<td><?php if($value['user_id'] == $_SESSION['login_id']){ ?>
+				<td class="column"><?=escape($value['nickname'])?></td>
+				<td class="column"><?=escape($value['comment'])?></td>
+				<td class="column"><?php if($value['user_id'] == $_SESSION['login_id']){ ?>
 					<form action="" method="post">
-						<input type="submit" value="削除" name="delete">
+						<input type="submit" value="削除" name="delete" class="btn">
 						<input type="hidden" name="comment_id" value="<?= $value['comment_id'] ?>">
 						<input type="hidden" name="counter" value="<?= $counter ?>">
 					</form>
@@ -111,10 +117,13 @@ foreach($favs as $key => $fav){
 				<option value="<?= $i ?>"><?= $i ?></option>
 			<?php } ?>
 		</select></p>
-		<input type="submit" name="addCart" value="カートに入れる">
+		<div class="btn_div"><input type="submit" name="addCart" value="カートに入れる" class="btn"></div>
 	</form>
+	<div id="a_div">
 	<a href="product_list.php">商品一覧画面に戻る</a>
 	<a href="product_comment.php?product_id=<?= $_GET['product_id'] ?>">この商品にコメントする</a>
+	</div>
+	</div>
 </body>
 </html>
 

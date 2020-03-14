@@ -74,7 +74,13 @@ if(isset($_POST['login'])){
 
 <!DOCTYPE html>
 <html>
+<head>
+        <meta charset="utf-8">
+        <title>Order Confirm</title>
+        <link rel="stylesheet" href="../css/styles.css">
+</head>
 <body>
+	<div id="container">
 	<?php if($_SESSION['login_id']){ ?>
 	<h1>購入する商品</h1>
 	<?php foreach($_SESSION['cart'] as $product){ ?>
@@ -99,5 +105,6 @@ if(isset($_POST['login'])){
 		<a href="../users/user_register.php"><input type="button" value="会員登録ページへ">
 	</form>
 	<?php } ?>
+	</div>
 </body>
 </html>

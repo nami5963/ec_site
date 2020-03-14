@@ -46,7 +46,13 @@ if(isset($_POST['submit'])){
 
 <!DOCTYPE html>
 <html>
+<head>
+        <meta charset="utf-8">
+        <title>Product Comment</title>
+        <link rel="stylesheet" href="../css/styles.css">
+</head>
 <body>
+    <div id="container">
     <?php if($_SESSION['login_id'] == true){ ?>
         <h1>コメント登録</h1>
         <form action="" method="POST">
@@ -69,5 +75,6 @@ if(isset($_POST['submit'])){
         <a href="../users/user_register.php">ユーザー新規登録画面へ</a>
         <a href="product_detail.php?product_id=<?= $_GET['product_id'] ?>">戻る</a>
     <?php } ?>
+    </div>
 </body>
 </html>

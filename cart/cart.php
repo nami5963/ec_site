@@ -28,7 +28,13 @@ if($_SESSION){
 
 <!DOCTYPE html>
 <html>
+<head>
+        <meta charset="utf-8">
+        <title>Cart Page</title>
+        <link rel="stylesheet" href="../css/styles.css">
+</head>
 <body>
+	<div id="container">
 	<?php if(!empty($_SESSION['cart'])){ ?>
 		<h1>カート画面</h1>
 		<table border='1'>
@@ -63,5 +69,6 @@ if($_SESSION){
 		<p>カートの中に商品がありません</p>
 		<a href="../products/product_list.php">商品一覧に戻る</a>
 	<?php } ?>
+	</div>
 </body>
 </html>

@@ -38,7 +38,13 @@ if(isset($_POST['send'])){
 
 <!DOCTYPE html>
 <html>
-	<body>
+<head>
+        <meta charset="utf-8">
+       	<title>Register Confirm</title>
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+	<div id="container">
 		<h1>登録内容確認</h1>
 		<p>名前<br>
 			<?php echo $_SESSION['user_regi']['name']; ?>
@@ -59,5 +65,6 @@ if(isset($_POST['send'])){
 			<input type="submit" name="send" value="送信">
 			<a href="javascript:history.back();"><input type="button" value="戻る">
 		</form>
-	</body>
+	</div>
+</body>
 </html>

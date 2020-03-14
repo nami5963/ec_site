@@ -27,7 +27,13 @@ if(isset($_POST['regi'])){
 
 <!DOCTYPE html>
 <html>
-	<body>
+<head>
+        <meta charset="utf-8">
+        <title>User Register</title>
+        <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+	<div id="container">
 		<h1>ユーザー登録</h1>
 		<form action="" method="post">
 			<p>名前<br>
@@ -49,5 +55,6 @@ if(isset($_POST['regi'])){
 			<a href="login.php"><input type="button" value="ログインページへ"></a>
 			<a href="../products/product_list.php"><input type="button" value="商品一覧へ"></a>
 		</form>
-	</body>
+	</div>
+</body>
 </html>

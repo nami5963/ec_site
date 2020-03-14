@@ -1,0 +1,76 @@
+#container {
+	width: 690px;
+	margin: 15px auto;
+	border: solid 1px #000;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+p {
+	text-align: center;
+}
+
+table {
+	width: 590px;
+	margin: auto;
+}
+
+a:hover {
+	color: #ff7043;
+}
+
+#a_div {
+	margin-top: 15px;
+	text-align: center;
+}
+
+#login_user {
+	text-align: right;
+	margin-right: 50px;
+}
+
+#form {
+	margin: 0 auto;
+	width: 300px;
+}
+
+#search {
+	margin: auto;
+	border-radius: 5px;
+	width: 290px;
+}
+
+#sort {
+	width: 150px;
+	margin-left: 500px;
+}
+
+.search_result {
+	margin: 0 auto 15px;
+}
+
+.column {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.btn_div {
+	text-align: center;
+}
+
+.btn {
+	font-weight: bold;
+        background-color: #248;
+        color: #fff;
+        border-style: none;
+        border-radius: 5px;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: #24d;
+}
+

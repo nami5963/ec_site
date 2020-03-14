@@ -45,16 +45,22 @@ if(!($_GET['sort']) || $_GET['sort'] == 'new'){
 
 <!DOCTYPE html>
 <html>
+<head>
+	<meta charset="utf-8">
+	<title>Product List</title>
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
 <body>
+	<div id="container">
 	<h1>商品一覧画面</h1>
 	<?php if($login_user){ ?>
-		<p>ログイン中のユーザー：<?= $login_user['name'] ?></p>
+		<p id="login_user">ログイン中のユーザー：<?= $login_user['name'] ?></p>
 	<?php } ?>
-	<form action="" method="get">
-		<input type="text" name="search" placeholder="商品名検索">
+	<form action="" method="get" id="form">
+		<input type="text" name="search" id="search" placeholder="商品名検索">
 		<input type="hidden" name="sort" value="<?= $_GET['sort'] ?>">
 	</form>
-	<form action="" method="get">
+	<form action="" method="get" id="sort">
 		<input type="hidden" name="search" value="<?= $_GET['search']?>">
 		<p>並び順:
 		<select name="sort" onchange="submit(this.form)">
@@ -64,26 +70,27 @@ if(!($_GET['sort']) || $_GET['sort'] == 'new'){
 		</select>
 	</form>
 	<?php if($_GET['search']){ ?>
-		<p>「<?= escape($_GET['search']) ?>」の検索結果</p>
+		<p class="search_result">「<?= escape($_GET['search']) ?>」の検索結果</p>
 	<?php } ?>
 	<?php if(!($products)){ ?>
-		<p>商品がありません</p>
+		<p class="search_result_none">商品がありません</p>
 	<?php }else{ ?>
 		<table border='1'>
-			<tr><td>Name</td><td>image</td><td>introduction</td><td>price</td></tr>
+			<tr><td class="column">Name</td><td class="column">image</td><td class="column">introduction</td><td class="column">price</td></tr>
  			<?php foreach($products as $product){ ?>
  				<tr>
- 					<td><?=$product['name']?></td>
- 					<td><img src="<?= $product['image'] ?>" width="100px" height="75px"></td>
-					<td><?=$product['introduction']?></td>
-					<td><?=$product['price']?></td>
+ 					<td class="column"><?=$product['name']?></td>
+ 					<td class="column"><img src="<?= $product['image'] ?>" width="100px" height="85px"></td>
+					<td class="column"><?=$product['introduction']?></td>
+					<td class="column"><?=$product['price']?></td>
 					<td>
- 						<a href="product_detail.php?product_id=<?= $product['id'] ?>"><input type="button" value="詳細"></a>
+						<div class="btn_div"><button type="button" class="btn" onclick="location.href='product_detail.php?product_id=<?= $product['id'] ?>'">詳細</button></div>
  					</td>
  				</tr>
 			<?php } ?>
 		</table>
 	<?php } ?>
+	<div id="a_div">
 	<a href="../cart/cart.php">カート画面へ</a>
 	<a href="product_ranking.php">売れ筋ランキングへ</a>
 	<?php if($_SESSION['login_id']){ ?>
@@ -91,5 +98,7 @@ if(!($_GET['sort']) || $_GET['sort'] == 'new'){
 	<?php }else{ ?>
 		<a href="../users/login.php">ログイン</a>
 	<?php } ?>
+	</div>
+	</div>
 </body>
 </html>
