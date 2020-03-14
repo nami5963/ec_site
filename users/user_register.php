@@ -36,25 +36,15 @@ if(isset($_POST['regi'])){
 	<div id="container">
 		<h1>ユーザー登録</h1>
 		<form action="" method="post">
-			<p>名前<br>
-				<input type="text" name="name" value="<?php if(!empty($_POST['name'])){echo escape($_POST['name']);} ?>" required>
-			</p>
-			<p>住所<br>
-				<input type="text" name="address" value="<?php if(!empty($_POST['address'])){echo escape($_POST['address']);} ?>" required>
-			</p>
-		  <p>メールアドレス<br>
-				<input type="email" name="email" value="<?php if(!empty($_POST['email'])){echo escape($_POST['email']);} ?>" required>
-			</p>
-			<p>パスワード<br>
-				<input type="password" name="password" required>
-			</p>
-			<p>クレジットカード番号<br>
-				<input type="text" name="CCNumber" value="<?php if(!empty($_POST['CCNumber'])){echo escape($_POST['CCNumber']);} ?>" required>
-			</p>
-			<input type="submit" name="regi" value="送信">
-			<a href="login.php"><input type="button" value="ログインページへ"></a>
-			<a href="../products/product_list.php"><input type="button" value="商品一覧へ"></a>
+			<p>名前:<input type="text" class="search" name="name" value="<?php if(!empty($_POST['name'])){echo escape($_POST['name']);} ?>" required></p>
+			<p>住所:<input type="text" class="search" name="address" value="<?php if(!empty($_POST['address'])){echo escape($_POST['address']);} ?>" required></p>
+			<p>メールアドレス:<input type="email" class="search" name="email" value="<?php if(!empty($_POST['email'])){echo escape($_POST['email']);} ?>" required></p>
+			<p>パスワード:<input type="password" class="search" name="password" required></p>
+			<p>クレジットカード番号:<input type="text" class="search" name="CCNumber" value="<?php if(!empty($_POST['CCNumber'])){echo escape($_POST['CCNumber']);} ?>" required></p>
+			<div class="user_btn_div"><input type="submit" class="btn" name="regi" value="送信"></div>
 		</form>
+		<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='login.php'">ログインページへ</button></div>
+		<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='../products/product_list.php'">商品一覧へ</button></div>
 	</div>
 </body>
 </html>

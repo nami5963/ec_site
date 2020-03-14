@@ -57,7 +57,7 @@ if(!($_GET['sort']) || $_GET['sort'] == 'new'){
 		<p id="login_user">ログイン中のユーザー：<?= $login_user['name'] ?></p>
 	<?php } ?>
 	<form action="" method="get" id="form">
-		<input type="text" name="search" id="search" placeholder="商品名検索">
+		<input type="text" name="search" class="search" placeholder="商品名検索">
 		<input type="hidden" name="sort" value="<?= $_GET['sort'] ?>">
 	</form>
 	<form action="" method="get" id="sort">

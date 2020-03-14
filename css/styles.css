@@ -34,10 +34,10 @@ a:hover {
 
 #form {
 	margin: 0 auto;
-	width: 300px;
+	width: 500px;
 }
 
-#search {
+.search {
 	margin: auto;
 	border-radius: 5px;
 	width: 290px;
@@ -50,6 +50,10 @@ a:hover {
 
 .search_result {
 	margin: 0 auto 15px;
+}
+
+.user_input {
+	margin-right: 0px;
 }
 
 .column {
@@ -74,3 +78,19 @@ a:hover {
 	background-color: #24d;
 }
 
+.user_btn_div {
+	text-align: right;
+}
+
+.user_btn {
+	font-weight: bold;
+        background-color: #333;
+        color: #fff;
+        border-style: none;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+.user_btn:hover {
+        background-color: #666;
+}

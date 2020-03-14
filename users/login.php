@@ -30,12 +30,12 @@ if(isset($_POST['email'])){
 	<div id="container">
 	<h1>ログイン画面</h1>
 	<form action="" method="post">
-		<p>email:<input type="email" name="email" required></p>
-		<p>password:<input type="password" name="password" required></p><br>
-		<input type="submit" value="ログイン">
-		<a href="user_register.php"><input type="button" value="会員登録ページへ"></a>
-		<a href="../products/product_list.php"><input type="button" value="商品一覧へ"></a>
+		<p>email:<input type="email" name="email" class="search" required></p>
+		<p>password:<input type="password" name="password" class="search" required></p><br>
+		<div class="user_btn_div"><input type="submit" value="ログイン" class="btn"></div>
 	</form>
+		<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='user_register.php'">会員登録ページへ</button></div>
+		<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='../products/product_list.php'">商品一覧ページへ</button></div>
 	</div>
 </body>
 </html>

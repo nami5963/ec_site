@@ -46,25 +46,15 @@ if(isset($_POST['send'])){
 <body>
 	<div id="container">
 		<h1>登録内容確認</h1>
-		<p>名前<br>
-			<?php echo $_SESSION['user_regi']['name']; ?>
-		</p>
-		<p>住所<br>
-			<?php echo $_SESSION['user_regi']['address']; ?>
-		</p>
-		<p>メールアドレス<br>
-			<?php echo $_SESSION['user_regi']['email']; ?>
-		</p>
-		<p>パスワード<br>
-			<?php echo $_SESSION['user_regi']['password']; ?>
-		</p>
-		<p>クレジットカード番号<br>
-			<?php echo $_SESSION['user_regi']['CCNumber']; ?>
-		</p>
+		<p>名前：<?php echo $_SESSION['user_regi']['name']; ?></p>
+		<p>住所：<?php echo $_SESSION['user_regi']['address']; ?></p>
+		<p>メールアドレス：<?php echo $_SESSION['user_regi']['email']; ?></p>
+		<p>パスワード：<?php echo $_SESSION['user_regi']['password']; ?></p>
+		<p>クレジットカード番号：<?php echo $_SESSION['user_regi']['CCNumber']; ?></p>
 		<form action="" method="post">
-			<input type="submit" name="send" value="送信">
-			<a href="javascript:history.back();"><input type="button" value="戻る">
+			<div class="user_btn_div"><input type="submit" class="btn" name="send" value="送信"></div>
 		</form>
+		<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='javascript:history.back();'">戻る</button></div>
 	</div>
 </body>
 </html>
