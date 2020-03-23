@@ -70,10 +70,9 @@ foreach($favs as $key => $fav){
 <body>
 	<div id="container">
 	<h1><?=$product['name']?>の商品詳細画面です</h1>
-	<p>商品名<br><?= $product['name']?></p>
 	<p><br><img src="<?= $product['image'] ?>" width="300px" height="250px"></p>
 	<p>紹介文<br><?= $product['introduction']?></p>
-	<p>値段<br><?= $product['price']?>円</p>
+	<p>値段<br><?= $product['price']?>円/個</p>
 	<?php if(empty($count)){ ?>
 		<p>この商品はまだ「いいね」されていません</p>
 	<?php }else{ ?>

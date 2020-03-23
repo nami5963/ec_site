@@ -47,7 +47,7 @@ foreach($array as $key =>$product){
                                 <td class="column"><?= $products[$i]['introduction']?></td>
                                 <td class="column"><?= $products[$i]['price']?></td>
                                 <td>
-					<div class="btn_div"><button type="button" class="btn" onclick="location.href='product_detail.php?product_id=<?= $product['id'] ?>'">詳細</button></div>
+					<div class="btn_div"><button type="button" class="btn" onclick="location.href='product_detail.php?product_id=<?= $products[$i]['id'] ?>'">詳細</button></div>
                                 </td>
                         </tr>
                 <?php } ?>
