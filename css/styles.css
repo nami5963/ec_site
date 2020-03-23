@@ -1,7 +1,12 @@
 #container {
 	width: 690px;
 	margin: 15px auto;
-	border: solid 1px #000;
+}
+
+body {
+	background-image: url(https://d1f5hsy4d47upe.cloudfront.net/10/101763dd6f047af58fe8bca0d6597eda_t.jpeg);
+	background-position: center center;
+	background-size: cover;
 }
 
 h1 {
@@ -25,6 +30,11 @@ a:hover {
 #a_div {
 	margin-top: 15px;
 	text-align: center;
+}
+
+.a_div {
+	margin-top: 15px;
+        text-align: center;
 }
 
 #login_user {
@@ -93,4 +103,10 @@ a:hover {
 
 .user_btn:hover {
         background-color: #666;
+}
+
+.comment_box {
+        border-radius: 5px;
+	width: 290px;
+	height: 200px;
 }

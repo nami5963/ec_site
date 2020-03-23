@@ -56,24 +56,22 @@ if(isset($_POST['submit'])){
     <?php if($_SESSION['login_id'] == true){ ?>
         <h1>コメント登録</h1>
         <form action="" method="POST">
-            ニックネーム<br>
-            <input type="text" name="nickname" required><br><br>
-            コメント<br>
-            <textarea name="comment"  rows="5" cols="50" required></textarea><br><br>
-            <input type="submit" value="送信" name="submit">
+            <p>ニックネーム<br>
+            <input type="text" name="nickname" class="search" required></p>
+            <p>コメント<br>
+            <textarea name="comment" rows="5" cols="50" class="comment_box" required></textarea></p>
+            <div class="user_btn_div"><input type="submit" value="送信" name="submit" class="btn"></div>
         </form>
-        <a href="product_detail.php?product_id=<?= $_GET['product_id'] ?>">戻る</a>
+	<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='product_detail.php?product_id=<?= $_GET['product_id'] ?>'">戻る</button></div>
     <?php }else{ ?>
         <p>コメントを登録するにはログインしている必要があります</p>
         <form action="" method="POST">
-            email<br>
-            <input type="text" name="email" value="<?php if (isset($_POST['email'])) { echo escape($_POST['email']); }?>" required><br><br>
-            パスワード<br>
-            <input type="password" name="password" required><br><br>
-            <input type="submit" value="ログイン" name="login">
+		<p>email:<input type="email" name="email" class="search" value="<?php if (isset($_POST['email'])) { echo escape($_POST['email']); }?>" requiredi></p>
+		<p>password:<input type="password" name="password" class="search" required></p>
+		<div class="user_btn_div"><input type="submit" value="ログイン" name="login" class="btn"></div>
         </form>
-        <a href="../users/user_register.php">ユーザー新規登録画面へ</a>
-        <a href="product_detail.php?product_id=<?= $_GET['product_id'] ?>">戻る</a>
+	<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='../users/user_register.php'">会員登録ページへ</button></div>
+	<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='product_detail.php?product_id=<?= $_GET['product_id'] ?>'">戻る</button></div>
     <?php } ?>
     </div>
 </body>

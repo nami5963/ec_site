@@ -57,7 +57,7 @@ if(!($_GET['sort']) || $_GET['sort'] == 'new'){
 		<p id="login_user">ログイン中のユーザー：<?= $login_user['name'] ?></p>
 	<?php } ?>
 	<form action="" method="get" id="form">
-		<input type="text" name="search" class="search" placeholder="商品名検索">
+		<p><input type="text" name="search" class="search" placeholder="商品名検索"></p>
 		<input type="hidden" name="sort" value="<?= $_GET['sort'] ?>">
 	</form>
 	<form action="" method="get" id="sort">
@@ -91,13 +91,13 @@ if(!($_GET['sort']) || $_GET['sort'] == 'new'){
 		</table>
 	<?php } ?>
 	<div id="a_div">
-	<a href="../cart/cart.php">カート画面へ</a>
-	<a href="product_ranking.php">売れ筋ランキングへ</a>
-	<?php if($_SESSION['login_id']){ ?>
-		<a href="../users/logout.php">ログアウト</a>
-	<?php }else{ ?>
-		<a href="../users/login.php">ログイン</a>
-	<?php } ?>
+		<a href="../cart/cart.php">カート画面へ</a>
+		<a href="product_ranking.php">売れ筋ランキングへ</a>
+		<?php if($_SESSION['login_id']){ ?>
+			<a href="../users/logout.php">ログアウト</a>
+		<?php }else{ ?>
+			<a href="../users/login.php">ログイン</a>
+		<?php } ?>
 	</div>
 	</div>
 </body>
