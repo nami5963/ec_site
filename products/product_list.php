@@ -52,53 +52,54 @@ if(!($_GET['sort']) || $_GET['sort'] == 'new'){
 </head>
 <body>
 	<div id="container">
-	<h1>商品一覧画面</h1>
-	<?php if($login_user){ ?>
-		<p id="login_user">ログイン中のユーザー：<?= $login_user['name'] ?></p>
-	<?php } ?>
-	<form action="" method="get" id="form">
-		<p><input type="text" name="search" class="search" placeholder="商品名検索"></p>
-		<input type="hidden" name="sort" value="<?= $_GET['sort'] ?>">
-	</form>
-	<form action="" method="get" id="sort">
-		<input type="hidden" name="search" value="<?= $_GET['search']?>">
-		<p>並び順:
-		<select name="sort" onchange="submit(this.form)">
-			<option value="new">新着順</a></option>
-			<option value="price_up"<?php if($_GET['sort'] == 'price_up'){echo 'selected';} ?>>安い順</option>
-			<option value="price_down"<?php if($_GET['sort'] == 'price_down'){echo 'selected';} ?>>高い順</option>
-		</select>
-	</form>
-	<?php if($_GET['search']){ ?>
-		<p class="search_result">「<?= escape($_GET['search']) ?>」の検索結果</p>
-	<?php } ?>
-	<?php if(!($products)){ ?>
-		<p class="search_result_none">商品がありません</p>
-	<?php }else{ ?>
-		<table border='1'>
-			<tr><td class="column">Name</td><td class="column">image</td><td class="column">introduction</td><td class="column">price</td></tr>
- 			<?php foreach($products as $product){ ?>
- 				<tr>
- 					<td class="column"><?=$product['name']?></td>
- 					<td class="column"><img src="<?= $product['image'] ?>" width="100px" height="85px"></td>
-					<td class="column"><?=$product['introduction']?></td>
-					<td class="column"><?=$product['price']?></td>
-					<td>
-						<div class="btn_div"><button type="button" class="btn" onclick="location.href='product_detail.php?product_id=<?= $product['id'] ?>'">詳細</button></div>
- 					</td>
- 				</tr>
-			<?php } ?>
-		</table>
-	<?php } ?>
-	<div id="a_div">
-		<a href="../cart/cart.php">カート画面へ</a>
-		<a href="product_ranking.php">売れ筋ランキングへ</a>
-		<?php if($_SESSION['login_id']){ ?>
-			<a href="../users/logout.php">ログアウト</a>
-		<?php }else{ ?>
-			<a href="../users/login.php">ログイン</a>
+		<h1>商品一覧画面</h1>
+		<?php if($login_user){ ?>
+			<p id="login_user">ログイン中のユーザー：<?= $login_user['name'] ?></p>
 		<?php } ?>
-	</div>
+		<form action="" method="get" id="form">
+			<p><input type="text" name="search" class="search" placeholder="商品名検索"></p>
+			<input type="hidden" name="sort" value="<?= $_GET['sort'] ?>">
+		</form>
+		<form action="" method="get" id="sort">
+			<p>並び順:<select name="sort" onchange="submit(this.form)">
+				<option value="new">新着順</a></option>
+				<option value="price_up"<?php if($_GET['sort'] == 'price_up'){echo 'selected';} ?>>安い順</option>
+				<option value="price_down"<?php if($_GET['sort'] == 'price_down'){echo 'selected';} ?>>高い順</option>
+			</select></p>
+			<input type="hidden" name="search" value="<?= $_GET['search']?>">
+		</form>
+		<?php if($_GET['search']){ ?>
+			<p class="search_result">「<?= escape($_GET['search']) ?>」の検索結果</p>
+		<?php } ?>
+		<?php if(!($products)){ ?>
+			<p class="search_result_none">商品がありません</p>
+		<?php }else{ ?>
+			<table border='1'>
+				<tr><td class="column">Name</td><td class="column">image</td><td class="column">introduction</td><td class="column">price</td></tr>
+ 				<?php foreach($products as $product){ ?>
+ 					<tr>
+ 						<td class="column"><?=$product['name']?></td>
+ 						<td class="column"><img src="<?= $product['image'] ?>" width="100px" height="85px"></td>
+						<td class="column"><?=$product['introduction']?></td>
+						<td class="column"><?=$product['price']?></td>
+						<td>
+							<div class="btn_div">
+								<button type="button" class="btn" onclick="location.href='product_detail.php?product_id=<?= $product['id'] ?>'">詳細</button>
+							</div>
+ 						</td>
+ 					</tr>
+				<?php } ?>
+			</table>
+		<?php } ?>
+		<div id="a_div">
+			<a href="../cart/cart.php">カート画面へ</a>
+			<a href="product_ranking.php">売れ筋ランキングへ</a>
+			<?php if($_SESSION['login_id']){ ?>
+				<a href="../users/logout.php">ログアウト</a>
+			<?php }else{ ?>
+				<a href="../users/login.php">ログイン</a>
+			<?php } ?>
+		</div>
 	</div>
 </body>
 </html>

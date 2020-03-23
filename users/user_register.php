@@ -41,10 +41,16 @@ if(isset($_POST['regi'])){
 			<p>メールアドレス:<input type="email" class="search" name="email" value="<?php if(!empty($_POST['email'])){echo escape($_POST['email']);} ?>" required></p>
 			<p>パスワード:<input type="password" class="search" name="password" required></p>
 			<p>クレジットカード番号:<input type="text" class="search" name="CCNumber" value="<?php if(!empty($_POST['CCNumber'])){echo escape($_POST['CCNumber']);} ?>" required></p>
-			<div class="user_btn_div"><input type="submit" class="btn" name="regi" value="送信"></div>
+			<div class="user_btn_div">
+				<input type="submit" class="btn" name="regi" value="送信">
+			</div>
 		</form>
-		<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='login.php'">ログインページへ</button></div>
-		<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='../products/product_list.php'">商品一覧へ</button></div>
+		<div class="user_btn_div">
+			<button type="button" class="user_btn" onclick="location.href='login.php'">ログインページへ</button>
+		</div>
+		<div class="user_btn_div">
+			<button type="button" class="user_btn" onclick="location.href='../products/product_list.php'">商品一覧へ</button>
+		</div>
 	</div>
 </body>
 </html>

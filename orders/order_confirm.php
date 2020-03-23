@@ -81,31 +81,39 @@ if(isset($_POST['login'])){
 </head>
 <body>
 	<div id="container">
-	<?php if($_SESSION['login_id']){ ?>
-	<h1>購入する商品</h1>
-	<?php foreach($_SESSION['cart'] as $product){ ?>
-		<p><?= $product['name'] . ':' . $product['quantity'] . '個->' . $product['price'] * $product['quantity'] . '円' ?></p>
-	<?php } ?>
-	<p>-----------------------------------------</p>
-	<p>合計金額：<?= $total ?>円</p>
-	<h1>お客様情報</h1>
-	<p>名前：<?= $user['name'] ?></p>
-	<p>住所：<?= $user['address'] ?></p>
-	<p>メールアドレス：<?= $user['email'] ?></p>
-	<p>クレジットカード番号：<?= $user['CCNumber'] ?></p>
-	<form action="" method="get">
-		<div class="user_btn_div"><input type="submit" value="購入する" name="buy" class="btn"></div>
-	</form>
-	<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='../products/product_list.php'">商品一覧ページへ</button></div>
-	<?php }else{ ?>
-	<h1>購入するにはログインする必要があります</h1>
-	<form action="" method="post">
-		<p>email:<input type="email" name="email" class="search" required></p>
-		<p>password:<input type="password" name="password" class="search" required></p><br>
-		<div class="user_btn_div"><input type="submit" name="login" value="ログイン" class="btn"></div>
-		<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='user_register.php'">会員登録ページへ</button></div>
-	</form>
-	<?php } ?>
+		<?php if($_SESSION['login_id']){ ?>
+			<h1>購入する商品</h1>
+			<?php foreach($_SESSION['cart'] as $product){ ?>
+				<p><?= $product['name'] . ':' . $product['quantity'] . '個->' . $product['price'] * $product['quantity'] . '円' ?></p>
+			<?php } ?>
+			<p>-----------------------------------------</p>
+			<p>合計金額：<?= $total ?>円</p>
+			<h1>お客様情報</h1>
+			<p>名前：<?= $user['name'] ?></p>
+			<p>住所：<?= $user['address'] ?></p>
+			<p>メールアドレス：<?= $user['email'] ?></p>
+			<p>クレジットカード番号：<?= $user['CCNumber'] ?></p>
+			<form action="" method="get">
+				<div class="user_btn_div">
+					<input type="submit" value="購入する" name="buy" class="btn">
+				</div>
+			</form>
+			<div class="user_btn_div">
+				<button type="button" class="user_btn" onclick="location.href='../products/product_list.php'">商品一覧ページへ</button>
+			</div>
+		<?php }else{ ?>
+			<h1>購入するにはログインする必要があります</h1>
+			<form action="" method="post">
+				<p>email:<input type="email" name="email" class="search" required></p>
+				<p>password:<input type="password" name="password" class="search" required></p><br>
+				<div class="user_btn_div">
+					<input type="submit" name="login" value="ログイン" class="btn">
+				</div>
+				<div class="user_btn_div">
+					<button type="button" class="user_btn" onclick="location.href='user_register.php'">会員登録ページへ</button>
+				</div>
+			</form>
+		<?php } ?>
 	</div>
 </body>
 </html>

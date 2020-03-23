@@ -52,9 +52,13 @@ if(isset($_POST['send'])){
 		<p>パスワード：<?php echo $_SESSION['user_regi']['password']; ?></p>
 		<p>クレジットカード番号：<?php echo $_SESSION['user_regi']['CCNumber']; ?></p>
 		<form action="" method="post">
-			<div class="user_btn_div"><input type="submit" class="btn" name="send" value="送信"></div>
+			<div class="user_btn_div">
+				<input type="submit" class="btn" name="send" value="送信">
+			</div>
 		</form>
-		<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='javascript:history.back();'">戻る</button></div>
+		<div class="user_btn_div">
+			<button type="button" class="user_btn" onclick="location.href='javascript:history.back();'">戻る</button>
+		</div>
 	</div>
 </body>
 </html>

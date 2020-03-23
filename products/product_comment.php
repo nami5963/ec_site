@@ -52,27 +52,35 @@ if(isset($_POST['submit'])){
         <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <div id="container">
-    <?php if($_SESSION['login_id'] == true){ ?>
-        <h1>コメント登録</h1>
-        <form action="" method="POST">
-            <p>ニックネーム<br>
-            <input type="text" name="nickname" class="search" required></p>
-            <p>コメント<br>
-            <textarea name="comment" rows="5" cols="50" class="comment_box" required></textarea></p>
-            <div class="user_btn_div"><input type="submit" value="送信" name="submit" class="btn"></div>
-        </form>
-	<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='product_detail.php?product_id=<?= $_GET['product_id'] ?>'">戻る</button></div>
-    <?php }else{ ?>
-        <p>コメントを登録するにはログインしている必要があります</p>
-        <form action="" method="POST">
-		<p>email:<input type="email" name="email" class="search" value="<?php if (isset($_POST['email'])) { echo escape($_POST['email']); }?>" requiredi></p>
-		<p>password:<input type="password" name="password" class="search" required></p>
-		<div class="user_btn_div"><input type="submit" value="ログイン" name="login" class="btn"></div>
-        </form>
-	<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='../users/user_register.php'">会員登録ページへ</button></div>
-	<div class="user_btn_div"><button type="button" class="user_btn" onclick="location.href='product_detail.php?product_id=<?= $_GET['product_id'] ?>'">戻る</button></div>
-    <?php } ?>
-    </div>
+	<div id="container">
+		<?php if($_SESSION['login_id'] == true){ ?>
+        		<h1>コメント登録</h1>
+        		<form action="" method="POST">
+				<p>ニックネーム<br><input type="text" name="nickname" class="search" required></p>
+				<p>コメント<br><textarea name="comment" rows="5" cols="50" class="comment_box" required></textarea></p>
+            			<div class="user_btn_div">
+					<input type="submit" value="送信" name="submit" class="btn">
+				</div>
+        		</form>
+			<div class="user_btn_div">
+				<button type="button" class="user_btn" onclick="location.href='product_detail.php?product_id=<?= $_GET['product_id'] ?>'">戻る</button>
+			</div>
+		<?php }else{ ?>
+			<p>コメントを登録するにはログインしている必要があります</p>
+			<form action="" method="POST">
+				<p>email:<input type="email" name="email" class="search" value="<?php if (isset($_POST['email'])) { echo escape($_POST['email']); }?>" requiredi></p>
+				<p>password:<input type="password" name="password" class="search" required></p>
+				<div class="user_btn_div">
+					<input type="submit" value="ログイン" name="login" class="btn">
+				</div>
+			</form>
+			<div class="user_btn_div">
+				<button type="button" class="user_btn" onclick="location.href='../users/user_register.php'">会員登録ページへ</button>
+			</div>
+			<div class="user_btn_div">
+				<button type="button" class="user_btn" onclick="location.href='product_detail.php?product_id=<?= $_GET['product_id'] ?>'">戻る</button>
+			</div>
+		<?php } ?>
+	</div>
 </body>
 </html>
