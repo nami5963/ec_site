@@ -6,9 +6,9 @@
 - いいね機能
 - 売上ランキング機能
 - 商品検索機能
-- 商品並び順変更機能
+- 商品並び順変更機能<br>
 などを実装しています。<br>
 ---
 ログインの際は以下のユーザーを使ってください<br>
-email: 'nami@email'<br>
-password: 'namipass'
+email: `nami@email`<br>
+password: `namipass`
